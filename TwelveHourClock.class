@@ -1,0 +1,66 @@
+// Source code is decompiled from a .class file using FernFlower decompiler.
+package ch6.clocks;
+
+public class TwelveHourClock {
+   private int hours;
+   private int minutes;
+   private int seconds;
+   private boolean isAM;
+
+   public TwelveHourClock(int hours, int minutes, int seconds, boolean isAM) {
+      this.hours = hours;
+      this.minutes = minutes;
+      this.seconds = seconds;
+      this.isAM = isAM;
+   }
+
+   public int seconds() {
+      return this.seconds;
+   }
+
+   public int minutes() {
+      return this.minutes;
+   }
+
+   public int hours() {
+      return this.hours;
+   }
+
+   public boolean isAM() {
+      return this.isAM;
+   }
+
+   public void incrementSeconds() {
+      if (this.seconds < 59) {
+         ++this.seconds;
+      } else {
+         this.seconds = 0;
+      }
+
+   }
+
+   public void incrementMinutes() {
+      if (this.minutes < 59) {
+         ++this.minutes;
+      } else {
+         this.minutes = 0;
+      }
+
+   }
+
+   public void incrementHours() {
+      if (this.hours < 12) {
+         ++this.hours;
+      } else {
+         this.hours = 1;
+      }
+
+   }
+
+   public void increment() {
+   }
+
+   public String toString() {
+      return this.hours + ":" + (this.minutes < 10 ? "0" : "") + this.minutes + ":" + (this.seconds < 10 ? "0" : "") + this.seconds + " " + (this.isAM ? "A.M." : "P.M.");
+   }
+}
